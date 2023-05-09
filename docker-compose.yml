@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  pg1:
+    image: debian:bullseye
+    container_name: pg1
+    networks:
+      failover_network:
+        ipv4_address: 172.7.7.11
+    ports:
+      - "5431:5432"
+    volumes:
+      - ./pg1-main:/etc/postgresql/13/main
+    command: sh -c "sleep 1d"
+
+  pg2:
+    image: debian:bullseye
+    container_name: pg2
+    networks:
+      failover_network:
+        ipv4_address: 172.7.7.22
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./pg2-main:/etc/postgresql/13/main
+    command: sh -c "sleep 1d"
+
+networks:
+  failover_network:
+    ipam:
+        config:
+            - subnet: 172.7.7.0/24
