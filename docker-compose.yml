@@ -24,6 +24,17 @@ services:
     volumes:
       - ./pg2-main:/etc/postgresql/13/main
     command: sh -c "sleep 1d"
+  pg3:
+    image: debian:bullseye
+    container_name: pg3
+    networks:
+      failover_network:
+        ipv4_address: 172.7.7.13
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./pg3-main:/etc/postgresql/13/main
+    command: sh -c "sleep 1d"
 
 networks:
   failover_network:
