@@ -96,7 +96,7 @@ conninfo='host=172.7.7.11 user=repmgr dbname=repmgr connect_timeout=2'
 data_directory='/var/lib/postgresql/data'
 failover=automatic
 promote_command='repmgr -f /etc/postgresql/13/main/repmgr.conf standby promote'
-follow_command='repmgr -f /etc/postgresql/13/main/repmgr.conf stamdby follow'
+follow_command='repmgr -f /etc/postgresql/13/main/repmgr.conf standby follow'
 
 # and register the node into the cluster
 repmgr -f /etc/postgresql/13/main/repmgr.conf primary register
@@ -137,7 +137,7 @@ conninfo='host=172.7.7.12 user=repmgr dbname=repmgr connect_timeout=2'
 data_directory='/var/lib/postgresql/data'
 failover=automatic
 promote_command='repmgr -f /etc/postgresql/13/main/repmgr.conf standby promote'
-follow_command='repmgr -f /etc/postgresql/13/main/repmgr.conf stamdby follow'
+follow_command='repmgr -f /etc/postgresql/13/main/repmgr.conf standby follow'
 
 # create a replica / clone from the primary server
 cd /etc/postgresql/13/main
@@ -184,7 +184,7 @@ conninfo='host=172.7.7.13 user=repmgr dbname=repmgr connect_timeout=2'
 data_directory='/var/lib/postgresql/data'
 failover=automatic
 promote_command='repmgr -f /etc/postgresql/13/main/repmgr.conf standby promote'
-follow_command='repmgr -f /etc/postgresql/13/main/repmgr.conf stamdby follow'
+follow_command='repmgr -f /etc/postgresql/13/main/repmgr.conf standby follow'
 
 # create a replica / clone from the primary server
 cd /etc/postgresql/13/main
